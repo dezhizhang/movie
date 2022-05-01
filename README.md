@@ -1,7 +1,7 @@
 # 视频网站
 
 ### httprouter使用
-```
+```go
 func RegisterHandlers() *httprouter.Router {
 	router := httprouter.New()
 	router.GET("/api/user",controller.CreateUser)
