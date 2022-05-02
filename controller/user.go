@@ -11,6 +11,16 @@ type User struct {
 
 }
 
+// 注册用户
+
+func Register(w http.ResponseWriter,r *http.Request,p httprouter.Params)  {
+
+	m := make(map[string]interface{},0)
+	m["name"] = "hello"
+	//io.WriteString(w,json.Marshal(&m))
+
+}
+
 //创建用户
 
 func CreateUser(w http.ResponseWriter, r *http.Request,p httprouter.Params)  {

@@ -3,11 +3,10 @@ package main
 import (
 	"github.com/julienschmidt/httprouter"
 	"movie/controller"
+	"movie/driver"
+	"movie/router"
 	"net/http"
 )
-
-
-
 
 func RegisterHandlers() *httprouter.Router {
 	router := httprouter.New()
@@ -20,7 +19,12 @@ func RegisterHandlers() *httprouter.Router {
 
 
 func main()  {
-	r := RegisterHandlers()
+	// 初始化数据库
+	driver.InitDB()
+
+	// 初始化路由
+	r := router.InitRouter()
+
 
 	http.ListenAndServe(":8000",r)
 
